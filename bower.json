@@ -9,10 +9,10 @@
   "main": "dist/ga-cnil-cookies.min.js",
   "keywords": [
     "cnil",
-    "google",
-    "analytics",
+    "google analytics",
     "cookies",
-    "fr"
+    "fr",
+    "french requirements"
   ],
   "license": "MIT",
   "ignore": [
