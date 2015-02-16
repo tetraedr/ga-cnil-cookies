@@ -1,0 +1,26 @@
+{
+  "name": "ga-cnil-cookies",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tetraedr/ga-cnil-cookies",
+  "authors": [
+    "provencal <vincent@tetraed.re>"
+  ],
+  "description": "Adaption du script d'intégration de google analytics fournis sur le site cnil.fr",
+  "main": "dist/ga-cnil-cookies.js",
+  "keywords": [
+    "cnil",
+    "google",
+    "analytics",
+    "cookies",
+    "fr"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
