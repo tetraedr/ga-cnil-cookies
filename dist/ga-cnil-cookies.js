@@ -1,7 +1,11 @@
 
 var cnilGA = {};
 
+
 cnilGA.dev=false;
+
+cnilGA.opposehideTime = 3000;
+
 
 cnilGA.bannerOppose = '<div id="cookie-message">'+ 
                             "Vous vous êtes oppos&eacute; au d&eacute;pôt de cookies de mesures d'audience"+
@@ -68,6 +72,10 @@ cnilGA.start = function(gaProperty){
           })();
 };
 
+cnilGA.writeCookie=function(string){
+        if(cnilGA.dev) return true;
+        else document.cookie = string;
+};
 
 
 
@@ -83,6 +91,9 @@ cnilGA.CookieConsent = function() {
      var date = new Date();
      date.setTime(date.getTime()+cookieTimeout);
      var expires = "; expires="+date.toGMTString();
+
+
+     
      return expires;
     }
 
@@ -173,7 +184,7 @@ cnilGA.CookieConsent = function() {
             hostname = hostname.substring(4);
         var domain = ";domain=" + "."+hostname;
         var expiration = "Thu, 01-Jan-1970 00:00:01 GMT";       
-        document.cookie = name + "=" + path + domain + ";expires=" + expiration;
+        cnilGA.writeCookie( name + "=" + path + domain + ";expires=" + expiration);
     }
       
     function deleteAnalyticsCookies() {
@@ -206,7 +217,7 @@ cnilGA.CookieConsent = function() {
         if (!isClickOnOptOut(evt) ) { 
             if ( !clickprocessed) {
                 evt.preventDefault();
-                document.cookie = 'hasConsent=true; '+ getCookieExpireDate() +' ; path=/'; 
+                cnilGA.writeCookie( 'hasConsent=true; '+ getCookieExpireDate() +' ; path=/'); 
                 callGoogleAnalytics();
                 clickprocessed = true;
                 window.setTimeout(function() {evt.target.click();}, 1000);
@@ -222,18 +233,25 @@ cnilGA.CookieConsent = function() {
         
     }
 
+    var opposed = false;
 
     return {
         
         // opt-out   
          gaOptout: function() {
         
-            document.cookie = disableStr + '=true;'+ getCookieExpireDate() +' ; path=/';       
-            document.cookie = 'hasConsent=false;'+ getCookieExpireDate() +' ; path=/';
+            cnilGA.writeCookie( disableStr + '=true;'+ getCookieExpireDate() +' ; path=/');       
+            cnilGA.writeCookie( 'hasConsent=false;'+ getCookieExpireDate() +' ; path=/');
             var banner = document.getElementById('cookie-banner');
-            console.log(banner);
-            if ( banner ) banner.innerHTML = cnilGA.bannerOppose;
-            banner.classList.remove('gacnil-hidden');
+            console.log('test');
+            if ( banner ){ 
+                 banner.innerHTML = cnilGA.bannerOppose;
+                 opposed=true;
+            }
+          
+            setTimeout(function(){  
+                    banner.classList.add('gacnil-hidden');
+            },cnilGA.opposehideTime);
 
             window[disableStr] = true;
             deleteAnalyticsCookies();
@@ -254,10 +272,14 @@ cnilGA.CookieConsent = function() {
             var ask = document.getElementById("inform-and-ask");
             ask.classList.remove('gacnil-visible');
 
-            var banner = document.getElementById("cookie-banner");
-            banner.classList.add('gacnil-hidden');
+            if(!opposed){
+                var banner = document.getElementById("cookie-banner");
+                banner.classList.add('gacnil-hidden');
+            }
+
 
         },
+
         
         
         start: function() {

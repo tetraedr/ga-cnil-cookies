@@ -1,3 +1,35 @@
+
+/**
+ *  animation sample
+ */
+
+#cookie-banner, #inform-and-ask{
+    -webkit-transition : visibility 0s, opacity 0.5s ease;
+    transition : visibility 0s, opacity 0.5s ease;
+}
+
+
+/**
+ * this class is used to show #inform-and-ask
+ */
+
+#inform-and-ask.gacnil-visible{
+/* display: initial;*/
+ opacity: 1;
+ visibility:visible;
+}
+
+/**
+ * this class is used to hide #cookie-banner
+ */
+
+.gacnil-hidden{
+    opacity:0;
+    z-index:9000;
+}
+
+
+
 #cookie-banner{
     width:100%;
     margin:0 auto;
@@ -18,18 +50,15 @@
 #inform-and-ask{
     width: 100% ;
     height: 100%;
-    display: none;
+    visibility:hidden;
+    opacity: 0;
     position: fixed;
     z-index:9000;
+
+ 
+  
 }
 
-#inform-and-ask.gacnil-visible{
-    display:initial;
-}
-
-.gacnil-hidden{
-    display:none;
-}
 
 #inform-and-consent{
     height:180px;
@@ -59,6 +88,10 @@
     cursor: pointer;
 }
 
-#cookie-message {}
+#cookie-message {
+    width:80%;
+    font-size: .8em;
+    margin:0 auto; 
+}
 
 
