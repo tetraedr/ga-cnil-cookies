@@ -5,8 +5,8 @@
   "authors": [
     "provencal <vincent@tetraed.re>"
   ],
-  "description": "Adaption du script d'intégration de google analytics fournis sur le site cnil.fr",
-  "main": "dist/ga-cnil-cookies.js",
+  "description": "Adaptation du script d'intégration de google analytics fournis sur le site cnil.fr",
+  "main": "dist/ga-cnil-cookies.min.js",
   "keywords": [
     "cnil",
     "google",

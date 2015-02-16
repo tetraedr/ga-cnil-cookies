@@ -1,7 +1,7 @@
 {
   "name": "ga-cnil-cookies",
   "version": "0.0.1",
-  "description": "Adaption du script d'intégration de google analytics fournis sur le site cnil.fr",
+  "description": "Adaptation du script d'intégration de google analytics fournis sur le site cnil.fr",
   "main": "ga-cnil-cookies.js",
   "private": "true",
   "scripts": {
