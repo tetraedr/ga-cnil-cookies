@@ -5,6 +5,7 @@ var cnilGA = {};
 cnilGA.dev=false;
 
 cnilGA.opposehideTime = 3000;
+cnilGA.autoHide = 4000;
 
 
 cnilGA.bannerOppose = '<div id="cookie-message">'+ 
@@ -106,16 +107,20 @@ cnilGA.CookieConsent = function() {
 
      function showBanner(){
         var bodytag = document.querySelectorAll('body')[0];
-        var div = document.createElement('div');
-        div.setAttribute('id','cookie-banner');
+        var banner = document.createElement('div');
+        banner.setAttribute('id','cookie-banner');
       
 
 
-        div.innerHTML =  cnilGA.bannerConsent ;
+        banner.innerHTML =  cnilGA.bannerConsent ;
 
-        bodytag.insertBefore(div,bodytag.firstChild); 
+        bodytag.insertBefore(banner,bodytag.firstChild); 
         document.querySelectorAll('body')[0].className+=' cookiebanner';    
         createInformAndAskDiv();
+
+        setTimeout(function(){
+            banner.classList.add('gacnil-hidden');
+        },cnilGA.autoHide);
      }
           
           
