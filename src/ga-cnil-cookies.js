@@ -47,7 +47,7 @@ cnilGA.bannerInformAsk =
                         'Accepter'+
                 '</button>'+
             '</div>'+
-        '</div>'
+        '</div>';
 
 
 cnilGA.start = function(gaProperty){
@@ -108,10 +108,8 @@ cnilGA.CookieConsent = function() {
         var bodytag = document.querySelectorAll('body')[0];
         var div = document.createElement('div');
         div.setAttribute('id','cookie-banner');
-      ;
+      
 
-        div.style.zIndex=90000;
-        div.style.position='fixed';
 
         div.innerHTML =  cnilGA.bannerConsent ;
 
