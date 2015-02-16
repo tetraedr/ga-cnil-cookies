@@ -2,6 +2,7 @@
   "name": "ga-cnil-cookies",
   "version": "0.0.1",
   "homepage": "https://github.com/tetraedr/ga-cnil-cookies",
+  "bootstrap": "master",
   "authors": [
     "provencal <vincent@tetraed.re>"
   ],
