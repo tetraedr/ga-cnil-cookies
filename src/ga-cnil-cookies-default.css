@@ -1,0 +1,55 @@
+#cookie-banner{
+    width:100%;
+    margin:0 auto;
+    background-color: rgba(255,255,255,.6);
+    padding : 5px;
+}
+
+#cookie-banner-message{
+    width:80%;
+    font-size: .8em;
+    margin:0 auto;
+}
+
+#cookie-banner-message a{
+
+}
+
+#inform-and-ask{
+    width: 100% ;
+    height: 100%;
+    display: none;
+    position: fixed;
+    z-index:9000;
+}
+
+#inform-and-consent{
+    height:180px;
+    max-width:380px;
+   
+    margin:15% auto 0;
+    padding:20px;
+    background-color: rgba(255,255,255,.6);
+}
+
+#inform-and-consent .gac-title{}
+
+#inform-and-consent .gac-body{
+     font-size: .8em;
+}
+
+#inform-and-consent .gac-buttons{
+    margin-top:20px;
+    border-top: solid 1px #ccc;
+    padding-top: 20px;
+}
+
+#inform-and-consent .gac-buttons button {
+    padding:10px;
+    margin:10px 15px;
+    cursor: pointer;
+}
+
+#cookie-message {}
+
+
