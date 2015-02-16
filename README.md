@@ -1,5 +1,5 @@
 # ga-cnil-cookies
-Adapation et amélioration du script d'intégration de google analytics fournis sur le site cnil.fr 
+Adaptation et amélioration du script d'intégration de google analytics fournis sur le site cnil.fr 
 dans le cadre des recommandations de cet organisme, concernant l'utilisation des cookies. 
 
 
