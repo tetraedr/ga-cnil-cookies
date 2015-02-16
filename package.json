@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Adaptation du script d'intégration de google analytics fournis sur le site cnil.fr",
   "main": "ga-cnil-cookies.js",
-  "private": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
