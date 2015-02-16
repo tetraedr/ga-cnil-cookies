@@ -5,7 +5,7 @@ dans le cadre des recommandations de cet organisme, concernant l'utilisation des
 
 # Installer avec bower
 ```
-bower install tetraedr/ga-cnil-cookies.git#master
+bower install tetraedr/ga-cnil-cookies#master
 ``` 
 
 # Usage 
