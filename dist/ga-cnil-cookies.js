@@ -27,7 +27,6 @@ cnilGA.bannerInformAsk =
             '<div class="gac-title">'+
                 '<span><b>Les cookies Google Analytics</b></span>'+
             '</div>'+
-            '<br>'+
             '<div class="gac-body">'+
 
                 'Ce site utilise  des cookies de Google Analytics, '+
@@ -69,16 +68,6 @@ cnilGA.start = function(gaProperty){
           })();
 };
 
-
-/*
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.querySelectorAll(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-59811597-1', 'auto');
-  ga('send', 'pageview');
- */
 
 
 
@@ -199,7 +188,6 @@ cnilGA.CookieConsent = function() {
         var div = document.createElement('div');
         div.setAttribute('id','inform-and-ask');
 
-
         div.innerHTML =  cnilGA.bannerInformAsk;
 
         bodytag.insertBefore(div,bodytag.firstChild); 
@@ -239,27 +227,36 @@ cnilGA.CookieConsent = function() {
         
         // opt-out   
          gaOptout: function() {
+        
             document.cookie = disableStr + '=true;'+ getCookieExpireDate() +' ; path=/';       
             document.cookie = 'hasConsent=false;'+ getCookieExpireDate() +' ; path=/';
             var banner = document.getElementById('cookie-banner');
-            if ( banner !== null ) banner.innerHTML = cnilGA.bannerOppose;
+            console.log(banner);
+            if ( banner ) banner.innerHTML = cnilGA.bannerOppose;
+            banner.classList.remove('gacnil-hidden');
+
             window[disableStr] = true;
             deleteAnalyticsCookies();
+        
         },
 
         
          showInform: function() {
+            
             var ask = document.getElementById("inform-and-ask");
-            ask.style.display = "initial";
+            ask.classList.add('gacnil-visible');
+
         },
           
           
          hideInform: function() {
+
             var ask = document.getElementById("inform-and-ask");
-            ask.style.display = "none";
+            ask.classList.remove('gacnil-visible');
 
             var banner = document.getElementById("cookie-banner");
-            banner.style.display = "none";
+            banner.classList.add('gacnil-hidden');
+
         },
         
         

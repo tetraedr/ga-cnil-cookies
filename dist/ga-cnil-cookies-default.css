@@ -23,16 +23,25 @@
     z-index:9000;
 }
 
+#inform-and-ask.gacnil-visible{
+    display:initial;
+}
+
+.gacnil-hidden{
+    display:none;
+}
+
 #inform-and-consent{
     height:180px;
     max-width:380px;
-   
     margin:15% auto 0;
     padding:20px;
     background-color: rgba(255,255,255,.6);
 }
 
-#inform-and-consent .gac-title{}
+#inform-and-consent .gac-title{
+    margin-bottom:20px;
+}
 
 #inform-and-consent .gac-body{
      font-size: .8em;
@@ -46,7 +55,7 @@
 
 #inform-and-consent .gac-buttons button {
     padding:10px;
-    margin:10px 15px;
+    margin:5px 15px 10px;
     cursor: pointer;
 }
 
